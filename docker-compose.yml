@@ -1,6 +1,19 @@
 version: '3'
 
 services:
+  localstack:
+    image: localstack/localstack
+    environment:
+      - SERVICES=s3
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+      - AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_OUTPUT=json
+
+    ports:
+      - "4566-4599:4566-4599" # s3
+      - "8080:8080"
   app:
     build: .
     volumes:

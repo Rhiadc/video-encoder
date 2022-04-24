@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
+	github.com/aws/aws-sdk-go v1.43.45
 	github.com/joho/godotenv v1.4.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/stretchr/testify v1.7.0
@@ -23,6 +24,7 @@ require (
 	github.com/jackc/pgx/v4 v4.15.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
 	golang.org/x/text v0.3.7 // indirect
