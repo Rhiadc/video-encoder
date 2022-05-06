@@ -6,4 +6,5 @@ type Config struct {
 	Username string
 	Password string
 	Database string
+	DSN      string
 }

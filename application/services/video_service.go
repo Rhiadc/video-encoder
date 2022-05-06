@@ -40,3 +40,19 @@ func (ref VideoService) Download(ctx context.Context, bucket string, video domai
 	}
 	return nil
 }
+
+func (ref VideoService) Upload(ctx context.Context, bucket string) error {
+	file, err := os.Open("./assets/id.txt")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	url, err := ref.MyS3.UploadObject(ctx, bucket, "id.txt", file)
+	if err != nil {
+		return err
+	}
+	log.Println("upload object:", url)
+
+	return nil
+}

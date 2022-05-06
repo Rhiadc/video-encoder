@@ -1,6 +1,20 @@
 version: '3'
 
 services:
+  pg_database:
+    container_name: pg_database
+    image: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: encoder
+      PGDATA: /data/postgres
+    volumes:
+      - postgress_data:/data/db
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
   localstack:
     image: localstack/localstack
     environment:
@@ -18,3 +32,6 @@ services:
     build: .
     volumes:
       - .:/go/src
+
+volumes:
+  postgress_data:
